@@ -1,4 +1,3 @@
-import { json } from 'express'
 import React from 'react'
 
 const App = () => {
@@ -20,7 +19,7 @@ const App = () => {
   const users = {
     name : "soham",
     age : 23,
-    city : "Bhopal"
+    city : "Mumbai"
   }
 
   localStorage.setItem('users' , JSON.stringify(users))
