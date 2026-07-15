@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import Card from './components/Card';
 
 const App = () => {
 
@@ -21,7 +22,7 @@ const App = () => {
   if (userData.length > 0) {
     printUserData = userData.map(function (elem, idx) {
       return <div key={elem.id}>
-        
+        <Card elem={elem}/>
       </div>
     })
   }
@@ -33,7 +34,7 @@ const App = () => {
         {printUserData}
       </div >
       <div className='flex justify-center gap-6 items-center'>
-        <button className='bg-amber-400 text-sm cursor-pointer active:scale-95 text-black rounded px-4 py-2 font-bold' onClick={() => {
+        <button style={{opacity: index == 1 ? 0.6 : 1}} className='bg-amber-400 text-sm cursor-pointer active:scale-95 text-black rounded px-4 py-2 font-bold' onClick={() => {
           if (index > 1) {
             setindex(index - 1)
             setUserData([])
