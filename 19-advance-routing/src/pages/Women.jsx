@@ -2,7 +2,7 @@ import React from 'react'
 
 const Women = () => {
   return (
-    <div>Women collection</div>
+    <div className='text-2xl font-semibold'>Women collection</div>
   )
 }
 

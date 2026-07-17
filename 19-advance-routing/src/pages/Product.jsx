@@ -5,12 +5,12 @@ import Women from './Women';
 
 const Product = () => {
   return (
-    <div>
-        <div>
-            <h1>Products</h1>
-            <Link to='/product/men'>Men</Link>
-            <Link to='/product/women'>Women</Link>
-            <Link to='/product/kids'>Kids</Link>
+    <div className='px-8 py-6'>
+        <div className='flex items-center gap-6 mb-6'>
+            <h1 className='text-2xl font-semibold mr-4'>Categories</h1>
+            <Link to='/product/men' className='hover:text-gray-300 transition-colors'>Men</Link>
+            <Link to='/product/women' className='hover:text-gray-300 transition-colors'>Women</Link>
+            <Link to='/product/kids' className='hover:text-gray-300 transition-colors'>Kids</Link>
         </div>
         <Outlet/>
     </div>

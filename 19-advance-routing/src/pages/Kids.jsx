@@ -2,7 +2,7 @@ import React from 'react'
 
 const Kids = () => {
   return (
-    <div>Kids Collection</div>
+    <div className='text-2xl font-semibold'>Kids Collection</div>
   )
 }
 
