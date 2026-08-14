@@ -1,18 +1,29 @@
 const {ImageKit} = require("@imagekit/nodejs")
 
-const ImageKitClient = new ImageKit({
-    privateKey: process.env.IMAGEKIT_PRIVATE_KEY,
-})
+let ImageKitClient;
+
+function getClient() {
+    if (!ImageKitClient) {
+        ImageKitClient = new ImageKit({
+            privateKey: process.env.IMAGEKIT_PRIVATE_KEY,
+        })
+    }
+    return ImageKitClient
+}
 
 async function uploadFile(file) {
-    const result = await ImageKitClient.files.upload({
+    const result = await getClient().files.upload({
         file,
         fileName:"music_" + Date.now(),
         folder: "sohrex_backend/music"
     })
 
     return result
-    
+
 }
 
-module.exports = {uploadFile}
+async function deleteFile(fileId) {
+    await getClient().files.delete(fileId)
+}
+
+module.exports = {uploadFile, deleteFile}
